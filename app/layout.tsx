@@ -1,10 +1,8 @@
 import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
 import './globals.css';
-
-const inter = Inter({
-  subsets: ['latin'],
-});
+import { roboto } from './ui/fonts';
+import { Providers } from './providers';
+import { Navbar } from './components';
 
 export const metadata: Metadata = {
   title: 'CV Generator',
@@ -13,8 +11,13 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="pl">
-      <body className={inter.className}>{children}</body>
+    <html lang="pl" className="dark" suppressHydrationWarning>
+      <body className={`${roboto.className} antialiased dark:bg-gray-800`}>
+        <Providers>
+          <Navbar />
+          <main>{children}</main>
+        </Providers>
+      </body>
     </html>
   );
 }
