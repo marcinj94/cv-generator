@@ -1,4 +1,5 @@
-import { dancingScript } from '../ui/fonts';
+// eslint-disable-next-line import/extensions, import/no-unresolved
+import { dancingScript } from '@/app/ui/fonts';
 
 interface AvatarProps {
   initials: string;
