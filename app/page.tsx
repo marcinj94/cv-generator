@@ -1,14 +1,16 @@
 // import Image from 'next/image';
 import { Avatar } from './components';
 
-export default function Home() {
+const Home = () => (
   // const test = 2;
   // const test2 = 123;
 
-  return (
-    <>
-      <Avatar initials="MJ" />
-      <Avatar initials="AK" />
-    </>
-  );
-}
+  // <div className="flex items-center justify-center content-center flex-col gap-5">
+  <div className="">
+    <Avatar initials="MJ" size="sm" />
+    <Avatar initials="MJ" size="md" />
+    <Avatar initials="MJ" size="lg" />
+  </div>
+);
+
+export default Home;

@@ -9,15 +9,15 @@ export const metadata: Metadata = {
   description: 'Generate CV with personal information - simple & 💵 free',
 };
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
-  return (
-    <html lang="pl" className="dark" suppressHydrationWarning>
-      <body className={`${roboto.className} antialiased dark:bg-gray-800`}>
-        <Providers>
-          <Navbar />
-          <main>{children}</main>
-        </Providers>
-      </body>
-    </html>
-  );
-}
+const RootLayout = ({ children }: { children: React.ReactNode }) => (
+  <html lang="pl" className="dark" suppressHydrationWarning>
+    <body className={`${roboto.className} antialiased dark:bg-gray-800`}>
+      <Providers>
+        <Navbar />
+        <main>{children}</main>
+      </Providers>
+    </body>
+  </html>
+);
+
+export default RootLayout;

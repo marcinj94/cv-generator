@@ -7,7 +7,7 @@ import Image from 'next/image';
 
 const ICON_SIZE = 36;
 
-export default function ThemeSwitch() {
+const ThemeSwitch = () => {
   const [mounted, setMounted] = useState(false);
   const { setTheme, resolvedTheme } = useTheme();
 
@@ -33,4 +33,8 @@ export default function ThemeSwitch() {
   if (resolvedTheme === 'light') {
     return <FiMoon size={ICON_SIZE} onClick={() => setTheme('dark')} />;
   }
-}
+
+  return null;
+};
+
+export default ThemeSwitch;
