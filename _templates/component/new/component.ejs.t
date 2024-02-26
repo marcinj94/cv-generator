@@ -2,11 +2,18 @@
 to: app/components/<%= h.capitalize(name) %>/index.tsx
 ---
 interface <%= h.capitalize(name) %>Props {
-  propValue: string;
+  firstProp: string;
+  secondProp: 'option1' | 'option2';
 }
 
-export function <%= h.capitalize(name) %>({ propValue }: <%= h.capitalize(name) %>Props) {
+export const <%= h.capitalize(name) %> = ({ firstProp, secondProp }: <%= h.capitalize(name) %>Props) => {
   // eslint-disable-next-line no-console
-  console.log('propValue:', propValue);
-  return <div><%= h.capitalize(name) %> component!</div>;
+  console.log('firstProp:', firstProp);
+  // eslint-disable-next-line no-console
+  console.log('secondProp:', secondProp);
+  return (
+    <div>
+      Paragraph component (firstProp={firstProp} | secondProp={secondProp})!
+    </div>
+  );
 }
