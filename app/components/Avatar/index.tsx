@@ -1,12 +1,11 @@
 // eslint-disable-next-line import/no-unresolved, import/extensions
 import { dancingScript } from '@/app/ui/fonts';
+import { Size } from '../types';
 
 export interface ParamsProps {
   avatarSize: string;
   fontSize: string;
 }
-
-type Size = 'sm' | 'md' | 'lg';
 
 export interface AvatarProps {
   initials: string;
@@ -19,6 +18,7 @@ export const Avatar: React.FC<AvatarProps> = ({ initials, size = 'md' }) => {
     fontSize: '',
   };
 
+  // TODO: add clsx package to rewrite this code
   if (size === 'sm') {
     params.avatarSize = 'w-16 h-16 p-1';
     params.fontSize = 'text-lg';
