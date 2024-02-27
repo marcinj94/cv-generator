@@ -1,7 +1,6 @@
 // eslint-disable-next-line import/extensions, import/no-unresolved
 import { roboto } from '@/app/ui/fonts';
-
-type Size = 'sm' | 'md' | 'lg';
+import { Size } from '../types';
 
 interface NameProps {
   name: string;

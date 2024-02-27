@@ -1,48 +1,31 @@
 // import Image from 'next/image';
-import { Avatar, Name } from './components';
+import { Avatar, Name, Profession } from './components';
+import { Size } from './components/types';
 
-const Home = () => (
-  // const test = 2;
-  // const test2 = 123;
+const Home = () => {
+  const arr: Size[] = ['sm', 'md', 'lg'];
 
-  // <div className="flex items-center justify-center content-center flex-col gap-5">
-  <div className="">
-    <div
-      className="text"
-      style={{
-        display: 'flex',
-        justifyContent: 'space-around',
-        alignItems: 'center',
-      }}
-    >
-      <Avatar initials="MJ" size="sm" />
-      <Name name="Marcin" surname="Jusiak" size="sm" />
+  return (
+    <div>
+      {arr.map((size: Size) => (
+        <div
+          className="text"
+          style={{
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+            gap: 20,
+          }}
+        >
+          <Avatar initials="MJ" size={size} />
+          <div className="div">
+            <Name name="Marcin" surname="Jusiak" size={size} />
+            <Profession title="Front-end developer" size={size} />
+          </div>
+        </div>
+      ))}
     </div>
-
-    <div
-      className="text"
-      style={{
-        display: 'flex',
-        justifyContent: 'space-around',
-        alignItems: 'center',
-      }}
-    >
-      <Avatar initials="MJ" size="md" />
-      <Name name="Marcin" surname="Jusiak" size="md" />
-    </div>
-
-    <div
-      className="text"
-      style={{
-        display: 'flex',
-        justifyContent: 'space-around',
-        alignItems: 'center',
-      }}
-    >
-      <Avatar initials="MJ" size="lg" />
-      <Name name="Marcin" surname="Jusiak" size="lg" />
-    </div>
-  </div>
-);
+  );
+};
 
 export default Home;
