@@ -1,5 +1,15 @@
 # Next.js + Typescript + Jest starter Template
 
+TODO: DO PRZEROBIENIA
+
+How to generate:
+
+> -> Components
+
+$ hygen component new [name]
+
+TODO: ---
+
 ---
 
 ## This repository is 🔋 battery packed with:

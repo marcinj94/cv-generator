@@ -1,5 +1,5 @@
 // import Image from 'next/image';
-import { Avatar } from './components';
+import { Avatar, Name } from './components';
 
 const Home = () => (
   // const test = 2;
@@ -7,9 +7,41 @@ const Home = () => (
 
   // <div className="flex items-center justify-center content-center flex-col gap-5">
   <div className="">
-    <Avatar initials="MJ" size="sm" />
-    <Avatar initials="MJ" size="md" />
-    <Avatar initials="MJ" size="lg" />
+    <div
+      className="text"
+      style={{
+        display: 'flex',
+        justifyContent: 'space-around',
+        alignItems: 'center',
+      }}
+    >
+      <Avatar initials="MJ" size="sm" />
+      <Name name="Marcin" surname="Jusiak" size="sm" />
+    </div>
+
+    <div
+      className="text"
+      style={{
+        display: 'flex',
+        justifyContent: 'space-around',
+        alignItems: 'center',
+      }}
+    >
+      <Avatar initials="MJ" size="md" />
+      <Name name="Marcin" surname="Jusiak" size="md" />
+    </div>
+
+    <div
+      className="text"
+      style={{
+        display: 'flex',
+        justifyContent: 'space-around',
+        alignItems: 'center',
+      }}
+    >
+      <Avatar initials="MJ" size="lg" />
+      <Name name="Marcin" surname="Jusiak" size="lg" />
+    </div>
   </div>
 );
 
