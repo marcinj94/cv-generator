@@ -1,6 +1,7 @@
 import { AiFillGithub, AiFillLinkedin } from 'react-icons/ai';
 import { FaSquarePhone } from 'react-icons/fa6';
 import { FiMail } from 'react-icons/fi';
+import { Box } from '..';
 
 interface ContactDetailsProps {
   mail: string;
@@ -9,49 +10,54 @@ interface ContactDetailsProps {
   phone?: string;
 }
 
-// TODO: border przeniesc do nowego komponentu -> tak aby było to reuzywalne!
-// TODO: mail, linkedin, github jako linki!
-
 export const ContactDetails: React.FC<ContactDetailsProps> = ({
   mail,
   linkedin,
   github,
   phone,
-}) => {
-  // eslint-disable-next-line no-console
-  console.log('mail:', mail);
-  // eslint-disable-next-line no-console
-  console.log('linkedin:', linkedin);
-  // eslint-disable-next-line no-console
-  console.log('github:', github);
-  // eslint-disable-next-line no-console
-  console.log('phone:', phone);
-  return (
-    <div className="px-10 py-4 rounded-[50px] border border-spacing-1 border-gray-700 dark:border-white">
-      <ul className="flex flex-col gap-3">
-        <li className="flex items-center gap-3">
+}) => (
+  <Box>
+    <ul className="flex flex-col gap-3">
+      <li>
+        <a className="flex items-center gap-3" href={`mailto:${mail}`}>
           <FiMail size={24} />
           {mail}
-        </li>
-        {linkedin && (
-          <li className="flex items-center gap-3">
+        </a>
+      </li>
+      {linkedin && (
+        <li>
+          <a
+            className="flex items-center gap-3"
+            href={`https://www.linkedin.com/in/${linkedin}`}
+            target="_blank"
+            rel="noreferrer"
+          >
             <AiFillLinkedin size={24} />
             <span className="underline">{linkedin}</span>
-          </li>
-        )}
-        {github && (
-          <li className="flex items-center gap-3">
+          </a>
+        </li>
+      )}
+      {github && (
+        <li className="flex items-center gap-3">
+          <a
+            className="flex items-center gap-3"
+            href={`https://github.com/${github}`}
+            target="_blank"
+            rel="noreferrer"
+          >
             <AiFillGithub size={24} />
             <span className="underline">{github}</span>
-          </li>
-        )}
-        {phone && (
-          <li className="flex items-center gap-3">
+          </a>
+        </li>
+      )}
+      {phone && (
+        <li className="flex items-center gap-3">
+          <a className="flex items-center gap-3" href={`tel:${phone.replaceAll(' ', '')}`}>
             <FaSquarePhone size={24} />
             {phone}
-          </li>
-        )}
-      </ul>
-    </div>
-  );
-};
+          </a>
+        </li>
+      )}
+    </ul>
+  </Box>
+);
