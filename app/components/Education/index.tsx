@@ -1,13 +1,26 @@
-import { Box } from '..';
+import { Box, Capsule, Dot } from '..';
 
-interface EducationProps {}
+export interface UniversityProps {
+  school: string;
+  years: string;
+  level: string;
+}
 
-// TODO: wypełnić komponent!
+interface EducationProps {
+  educations: UniversityProps[];
+}
 
-// eslint-disable-next-line no-empty-pattern
-export const Education: React.FC<EducationProps> = ({}) => {
-  const array: string[] = [];
-  // eslint-disable-next-line no-console
-  console.log('array:', array);
-  return <Box header="Education">test</Box>;
-};
+export const Education: React.FC<EducationProps> = ({ educations }) => (
+  <Box header="Education">
+    {educations.map(({ school, years, level }) => (
+      <div className="mb-2">
+        <div className="flex justify-between items-center relative">
+          <Dot isAbsolute />
+          <h3 className="font-bold">{school}</h3>
+          <Capsule description={years} boldText />
+        </div>
+        <p className="italic">{level}</p>
+      </div>
+    ))}
+  </Box>
+);

@@ -1,5 +1,5 @@
 // import Image from 'next/image';
-import { Avatar, Box, Capsule, ContactDetails, Name, Profession } from './components';
+import { Avatar, Box, Capsule, ContactDetails, Education, Name, Profession } from './components';
 import { Size } from './components/types';
 
 const Home = () => {
@@ -25,6 +25,30 @@ const Home = () => {
         </div>
       ))}
       <div className="flex flex-col gap-3 m-4">
+        <Education
+          educations={[
+            {
+              school: 'Josip Juraj Strossmayer University of Osijek',
+              years: '10/2017 - 02/2018',
+              level: 'Master of Engineering | Erasmus+',
+            },
+            {
+              school: 'Lublin University of Technologi',
+              years: '2017 - 2018',
+              level: 'Master of Engineering in Computer Science | spec. Internet Application',
+            },
+            {
+              school: 'Suleyman Demirel University',
+              years: '02/2016 - 06/2016',
+              level: 'Bachelor of Engineering | Erasmus+',
+            },
+            {
+              school: 'Lublin University of Technologi',
+              years: '2013 - 2017',
+              level: 'Bachelor of Engineering in Computer Science',
+            },
+          ]}
+        />
         <Capsule description="2017 - 2022" boldText />
         <Capsule description="2017 - 2022" boldText background="bluish-gradient" />
         <Capsule description="2017 - 2022" background="reddish-gradient" />

@@ -7,3 +7,4 @@ export * from './ContactDetails';
 export * from './Box';
 export * from './Education';
 export * from './Capsule';
+export * from './Dot';
