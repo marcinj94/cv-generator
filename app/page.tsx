@@ -1,5 +1,5 @@
 // import Image from 'next/image';
-import { Avatar, Box, ContactDetails, Name, Profession } from './components';
+import { Avatar, Box, Capsule, ContactDetails, Name, Profession } from './components';
 import { Size } from './components/types';
 
 const Home = () => {
@@ -25,6 +25,9 @@ const Home = () => {
         </div>
       ))}
       <div className="flex flex-col gap-3 m-4">
+        <Capsule description="2017 - 2022" boldText />
+        <Capsule description="2017 - 2022" boldText background="bluish-gradient" />
+        <Capsule description="2017 - 2022" background="reddish-gradient" />
         <ContactDetails
           mail="john.doe@gmail.com"
           linkedin="Marcin Jusiak"
