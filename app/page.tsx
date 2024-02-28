@@ -1,5 +1,5 @@
 // import Image from 'next/image';
-import { Avatar, ContactDetails, Name, Profession } from './components';
+import { Avatar, Box, ContactDetails, Name, Profession } from './components';
 import { Size } from './components/types';
 
 const Home = () => {
@@ -34,6 +34,7 @@ const Home = () => {
         <ContactDetails mail="john.doe@gmail.com" />
         <ContactDetails mail="john.doe@gmail.com" linkedin="Marcin Jusiak" />
         <ContactDetails mail="john.doe@gmail.com" linkedin="Marcin Jusiak" github="marcinj94" />
+        <Box header="Education">test</Box>
       </div>
     </div>
   );
