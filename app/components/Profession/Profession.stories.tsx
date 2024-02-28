@@ -2,6 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { Profession } from '.';
 
 const meta: Meta<typeof Profession> = {
+  title: 'Components/Basic/Profession',
   component: Profession,
   // 👇 Enables auto-generated documentation for the component story
   tags: ['autodocs'],

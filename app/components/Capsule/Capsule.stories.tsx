@@ -5,6 +5,7 @@ import { IoLogoJavascript } from 'react-icons/io';
 import { Capsule } from '.';
 
 const meta: Meta<typeof Capsule> = {
+  title: 'Components/Basic/Capsule',
   component: Capsule,
   // 👇 Enables auto-generated documentation for the component story
   tags: ['autodocs'],

@@ -9,6 +9,7 @@ import {
   Capsule,
   ContactDetails,
   Education,
+  Experience,
   Name,
   Profession,
   Technologies,
@@ -38,6 +39,58 @@ const Home = () => {
         </div>
       ))}
       <div className="flex flex-col gap-3 m-4">
+        <Experience
+          jobs={[
+            {
+              jobTitle: 'Front-end developer',
+              company: 'Amazon',
+              timeline: '2010 - 2015',
+              techs: [
+                {
+                  description: 'development new front end applications',
+                  skills: [
+                    {
+                      description: 'HTML',
+                    },
+                    {
+                      description: 'CSS',
+                    },
+                    {
+                      description: 'JavaScript',
+                    },
+                  ],
+                },
+                {
+                  description: 'development new backend application',
+                  skills: [
+                    {
+                      description: 'Node.JS',
+                    },
+                    {
+                      description: 'ExpressJS',
+                    },
+                    {
+                      description: 'MongoDB',
+                    },
+                    {
+                      description: 'Gitlab CI/CD',
+                    },
+                  ],
+                },
+              ],
+            },
+            {
+              jobTitle: 'Back-end developer',
+              company: 'Google',
+              timeline: '04.2015 - 12.2022',
+              techs: [
+                {
+                  description: 'create new applications',
+                },
+              ],
+            },
+          ]}
+        />
         <Technologies
           elements={[
             {
@@ -102,9 +155,6 @@ const Home = () => {
           github="marcinj94"
           phone="+48 123 123 123"
         />
-        <ContactDetails mail="john.doe@gmail.com" />
-        <ContactDetails mail="john.doe@gmail.com" linkedin="Marcin Jusiak" />
-        <ContactDetails mail="john.doe@gmail.com" linkedin="Marcin Jusiak" github="marcinj94" />
         <Box header="Education">test</Box>
       </div>
     </div>

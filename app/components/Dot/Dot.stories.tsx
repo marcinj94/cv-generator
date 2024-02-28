@@ -2,6 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { Dot } from '.';
 
 const meta: Meta<typeof Dot> = {
+  title: 'Components/Basic/Dot',
   component: Dot,
   // 👇 Enables auto-generated documentation for the component story
   tags: ['autodocs'],

@@ -5,6 +5,7 @@ import { SiStorybook } from 'react-icons/si';
 import { Technologies } from '.';
 
 const meta: Meta<typeof Technologies> = {
+  title: 'Components/UI/Technologies',
   component: Technologies,
   // 👇 Enables auto-generated documentation for the component story
   tags: ['autodocs'],
@@ -34,19 +35,19 @@ export const ListOfTechnologies: Story = {
         Icon: SiStorybook,
       },
       {
-        description: 'Struktura MVVM',
+        description: 'HTML',
       },
       {
-        description: 'CocoaPods',
+        description: 'CSS',
       },
       {
-        description: 'Core Data',
+        description: 'NestJS',
       },
       {
         description: 'JSON',
       },
       {
-        description: 'Firestore',
+        description: 'Firebase',
       },
     ],
   },
