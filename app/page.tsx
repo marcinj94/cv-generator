@@ -1,5 +1,18 @@
+/* eslint-disable object-curly-newline */
 // import Image from 'next/image';
-import { Avatar, Box, Capsule, ContactDetails, Education, Name, Profession } from './components';
+import { DiSwift } from 'react-icons/di';
+import { TbBrandNextjs } from 'react-icons/tb';
+import { SiStorybook } from 'react-icons/si';
+import {
+  Avatar,
+  Box,
+  Capsule,
+  ContactDetails,
+  Education,
+  Name,
+  Profession,
+  Technologies,
+} from './components';
 import { Size } from './components/types';
 
 const Home = () => {
@@ -25,6 +38,37 @@ const Home = () => {
         </div>
       ))}
       <div className="flex flex-col gap-3 m-4">
+        <Technologies
+          elements={[
+            {
+              description: 'Swift',
+              Icon: DiSwift,
+            },
+            {
+              description: 'Next.JS',
+              Icon: TbBrandNextjs,
+            },
+            {
+              description: 'Storybook',
+              Icon: SiStorybook,
+            },
+            {
+              description: 'Struktura MVVM',
+            },
+            {
+              description: 'CocoaPods',
+            },
+            {
+              description: 'Core Data',
+            },
+            {
+              description: 'JSON',
+            },
+            {
+              description: 'Firestore',
+            },
+          ]}
+        />
         <Education
           educations={[
             {

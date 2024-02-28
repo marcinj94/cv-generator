@@ -1,4 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
+import { TbBrandNextjs } from 'react-icons/tb';
+import { SiStorybook } from 'react-icons/si';
+import { IoLogoJavascript } from 'react-icons/io';
 import { Capsule } from '.';
 
 const meta: Meta<typeof Capsule> = {
@@ -16,6 +19,9 @@ const meta: Meta<typeof Capsule> = {
       control: 'radio',
       options: ['reddish-gradient', 'bluish-gradient'],
     },
+    Icon: {
+      description: 'Icon component',
+    },
   },
 };
 
@@ -24,23 +30,49 @@ type Story = StoryObj<typeof Capsule>;
 
 export const WithoutBackground: Story = {
   args: {
-    description: '2017 - 2022',
+    description: 'JavaScript',
     boldText: true,
+  },
+};
+
+export const WithoutBackgroundWithIcon: Story = {
+  args: {
+    description: 'JavaScript',
+    boldText: true,
+    Icon: IoLogoJavascript,
   },
 };
 
 export const BluishBackground: Story = {
   args: {
-    description: 'Firestore',
+    description: 'Storybook',
     boldText: true,
     background: 'bluish-gradient',
   },
 };
 
-export const ReddishVersion: Story = {
+export const BluishBackgroundWithIcon: Story = {
   args: {
-    description: '@ObservableObject',
+    description: 'Storybook',
+    boldText: true,
+    background: 'bluish-gradient',
+    Icon: SiStorybook,
+  },
+};
+
+export const ReddishBackground: Story = {
+  args: {
+    description: 'Next.JS',
     boldText: true,
     background: 'reddish-gradient',
+  },
+};
+
+export const ReddishBackgroundWithIcon: Story = {
+  args: {
+    description: 'Next.JS',
+    boldText: true,
+    background: 'reddish-gradient',
+    Icon: TbBrandNextjs,
   },
 };
