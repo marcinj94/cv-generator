@@ -2,6 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { Name } from '.';
 
 const meta: Meta<typeof Name> = {
+  title: 'Components/Basic/Name',
   component: Name,
   // 👇 Enables auto-generated documentation for the component story
   tags: ['autodocs'],
@@ -24,8 +25,8 @@ type Story = StoryObj<typeof Name>;
 
 export const Small: Story = {
   args: {
-    name: 'Marcin',
-    surname: 'Jusiak',
+    name: 'Michael',
+    surname: 'Corleone',
     size: 'sm',
   },
 };

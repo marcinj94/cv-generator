@@ -2,6 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { Education } from '.';
 
 const meta: Meta<typeof Education> = {
+  title: 'Components/UI/Education',
   component: Education,
   // 👇 Enables auto-generated documentation for the component story
   tags: ['autodocs'],
@@ -19,23 +20,18 @@ export const ListOfUniversities: Story = {
   args: {
     educations: [
       {
-        school: 'Josip Juraj Strossmayer University of Osijek',
-        years: '10/2017 - 02/2018',
-        level: 'Master of Engineering | Erasmus+',
+        school: 'Cambridge University',
+        years: '2012 - 2013',
+        level: 'Master of Engineering',
       },
       {
-        school: 'Lublin University of Technologi',
-        years: '2017 - 2018',
-        level: 'Master of Engineering in Computer Science | spec. Internet Application',
+        school: 'Scranton University',
+        years: '2011 - 2012',
+        level: 'Master of Engineering in Computer Science',
       },
       {
-        school: 'Suleyman Demirel University',
-        years: '02/2016 - 06/2016',
-        level: 'Bachelor of Engineering | Erasmus+',
-      },
-      {
-        school: 'Lublin University of Technologi',
-        years: '2013 - 2017',
+        school: 'Scranton University',
+        years: '2009 - 2011',
         level: 'Bachelor of Engineering in Computer Science',
       },
     ],

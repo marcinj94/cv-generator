@@ -3,7 +3,7 @@ import { IconType } from 'react-icons';
 // eslint-disable-next-line import/extensions, import/no-unresolved
 import { roboto } from '@/app/ui/fonts';
 
-interface CapsuleProps {
+export interface CapsuleProps {
   description: string;
   boldText?: boolean;
   background?: 'reddish-gradient' | 'bluish-gradient';

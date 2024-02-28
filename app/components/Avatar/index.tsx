@@ -1,42 +1,34 @@
+import clsx from 'clsx';
 // eslint-disable-next-line import/no-unresolved, import/extensions
 import { dancingScript } from '@/app/ui/fonts';
 import { Size } from '../types';
-
-export interface ParamsProps {
-  avatarSize: string;
-  fontSize: string;
-}
 
 export interface AvatarProps {
   initials: string;
   size?: Size;
 }
 
-export const Avatar: React.FC<AvatarProps> = ({ initials, size = 'md' }) => {
-  const params: ParamsProps = {
-    avatarSize: '',
-    fontSize: '',
-  };
-
-  // TODO: add clsx package to rewrite this code
-  if (size === 'sm') {
-    params.avatarSize = 'w-16 h-16 p-1';
-    params.fontSize = 'text-lg';
-  } else if (size === 'md') {
-    params.avatarSize = 'w-24 h-24 p-1';
-    params.fontSize = 'text-4xl';
-  } else if (size === 'lg') {
-    params.avatarSize = 'w-48 h-48 p-2';
-    params.fontSize = 'text-8xl';
-  }
-
-  return (
-    <div
-      className={`rounded-full overflow-hidden ${params.avatarSize} bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 p-1`}
-    >
-      <div className="flex justify-center items-center h-full bg-white text-black dark:bg-gray-800 dark:text-white rounded-full p-4">
-        <span className={`${dancingScript.className} ${params.fontSize}`}>{initials}</span>
-      </div>
+export const Avatar: React.FC<AvatarProps> = ({ initials, size = 'md' }) => (
+  <div
+    className={clsx(
+      'rounded-full overflow-hidden bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 p-1',
+      {
+        'w-16 h-16 p-1': size === 'sm',
+        'w-24 h-24 p-1': size === 'md',
+        'w-48 h-48 p-2': size === 'lg',
+      },
+    )}
+  >
+    <div className="flex justify-center items-center h-full bg-white text-black dark:bg-gray-800 dark:text-white rounded-full p-4">
+      <span
+        className={clsx(dancingScript.className, {
+          'text-lg': size === 'sm',
+          'text-4xl': size === 'md',
+          'text-8xl': size === 'lg',
+        })}
+      >
+        {initials}
+      </span>
     </div>
-  );
-};
+  </div>
+);

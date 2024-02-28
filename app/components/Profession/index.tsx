@@ -1,3 +1,4 @@
+import clsx from 'clsx';
 // eslint-disable-next-line import/extensions, import/no-unresolved
 import { roboto } from '@/app/ui/fonts';
 import { Size } from '../types';
@@ -7,38 +8,14 @@ interface ProfessionProps {
   size?: Size;
 }
 
-interface ParamsProps {
-  lineHeight: string;
-  fontSize: string;
-  letterSpacing: string;
-}
-
-export const Profession: React.FC<ProfessionProps> = ({ title, size = 'md' }) => {
-  const params: ParamsProps = {
-    lineHeight: '',
-    fontSize: '',
-    letterSpacing: '',
-  };
-
-  if (size === 'sm') {
-    params.fontSize = 'text-sm';
-    params.lineHeight = 'leading-4';
-    params.letterSpacing = 'tracking-[1px]';
-  } else if (size === 'md') {
-    params.fontSize = 'text-lg';
-    params.lineHeight = 'leading-6';
-    params.letterSpacing = 'tracking-[2px]';
-  } else if (size === 'lg') {
-    params.fontSize = 'text-2xl';
-    params.lineHeight = 'leading-8';
-    params.letterSpacing = 'tracking-[4px]';
-  }
-
-  return (
-    <h2
-      className={`${roboto.className} text-center font-bold uppercase ${params.letterSpacing} ${params.fontSize} ${params.lineHeight}`}
-    >
-      {title}
-    </h2>
-  );
-};
+export const Profession: React.FC<ProfessionProps> = ({ title, size = 'md' }) => (
+  <h2
+    className={clsx(roboto.className, 'text-center font-bold uppercase', {
+      'text-sm leading-4 tracking-[1px]': size === 'sm',
+      'text-lg leading-6 tracking-[2px]': size === 'md',
+      'text-2xl leading-8 tracking-[4px]': size === 'lg',
+    })}
+  >
+    {title}
+  </h2>
+);

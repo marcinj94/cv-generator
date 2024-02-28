@@ -1,3 +1,4 @@
+import clsx from 'clsx';
 import { Box, Capsule, Dot } from '..';
 
 export interface UniversityProps {
@@ -12,8 +13,12 @@ interface EducationProps {
 
 export const Education: React.FC<EducationProps> = ({ educations }) => (
   <Box header="Education">
-    {educations.map(({ school, years, level }) => (
-      <div className="mb-2">
+    {educations.map(({ school, years, level }, index) => (
+      <div
+        className={clsx({
+          'mb-2': index !== educations.length - 1,
+        })}
+      >
         <div className="flex justify-between items-center relative">
           <Dot isAbsolute />
           <h3 className="font-bold">{school}</h3>

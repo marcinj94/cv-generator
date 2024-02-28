@@ -3,6 +3,7 @@ import { Avatar } from '.';
 
 const meta: Meta<typeof Avatar> = {
   component: Avatar,
+  title: 'Components/Basic/Avatar',
   // 👇 Enables auto-generated documentation for the component story
   tags: ['autodocs'],
   argTypes: {
