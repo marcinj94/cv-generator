@@ -1,5 +1,5 @@
 // import Image from 'next/image';
-import { Avatar, Name, Profession } from './components';
+import { Avatar, ContactDetails, Name, Profession } from './components';
 import { Size } from './components/types';
 
 const Home = () => {
@@ -24,6 +24,17 @@ const Home = () => {
           </div>
         </div>
       ))}
+      <div className="flex flex-col gap-3 m-4">
+        <ContactDetails
+          mail="john.doe@gmail.com"
+          linkedin="Marcin Jusiak"
+          github="marcinj94"
+          phone="+48 123 123 123"
+        />
+        <ContactDetails mail="john.doe@gmail.com" />
+        <ContactDetails mail="john.doe@gmail.com" linkedin="Marcin Jusiak" />
+        <ContactDetails mail="john.doe@gmail.com" linkedin="Marcin Jusiak" github="marcinj94" />
+      </div>
     </div>
   );
 };
