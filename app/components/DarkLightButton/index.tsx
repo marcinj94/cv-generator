@@ -7,10 +7,7 @@ import Image from 'next/image';
 
 const ICON_SIZE = 36;
 
-// TODO: create .stories.tsx
-// TODO: add theme switcher to storybook -> https://storybook.js.org/blog/how-to-add-a-theme-switcher-to-storybook/
-
-const ThemeSwitch = () => {
+const DarkLightButton = () => {
   const [mounted, setMounted] = useState(false);
   const { setTheme, resolvedTheme } = useTheme();
 
@@ -30,14 +27,22 @@ const ThemeSwitch = () => {
     );
 
   if (resolvedTheme === 'dark') {
-    return <FiSun size={ICON_SIZE} onClick={() => setTheme('light')} />;
+    return (
+      <button type="button" aria-label="Theme-switch to light mode">
+        <FiSun size={ICON_SIZE} onClick={() => setTheme('light')} />
+      </button>
+    );
   }
 
   if (resolvedTheme === 'light') {
-    return <FiMoon size={ICON_SIZE} onClick={() => setTheme('dark')} />;
+    return (
+      <button type="button" aria-label="Theme-switch to dark mode">
+        <FiMoon size={ICON_SIZE} onClick={() => setTheme('dark')} />
+      </button>
+    );
   }
 
   return null;
 };
 
-export default ThemeSwitch;
+export default DarkLightButton;

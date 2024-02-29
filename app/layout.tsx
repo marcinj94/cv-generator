@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 
 const RootLayout = ({ children }: { children: React.ReactNode }) => (
   <html lang="pl" className="dark" suppressHydrationWarning>
-    <body className={`${roboto.className} antialiased dark:bg-gray-800`}>
+    <body className={`${roboto.className} antialiased`}>
       <Providers>
         <Navbar />
         <main>{children}</main>
