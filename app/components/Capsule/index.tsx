@@ -2,11 +2,12 @@ import clsx from 'clsx';
 import { IconType } from 'react-icons';
 // eslint-disable-next-line import/extensions, import/no-unresolved
 import { roboto } from '@/app/ui/fonts';
+import { BackgroundGradient } from '../types';
 
 export interface CapsuleProps {
   description: string;
   boldText?: boolean;
-  background?: 'reddish-gradient' | 'bluish-gradient';
+  background?: BackgroundGradient;
   Icon?: IconType;
 }
 

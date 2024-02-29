@@ -11,6 +11,10 @@ const meta: Meta<typeof Dot> = {
       control: 'boolean',
       description: 'If is true component position is absolute',
     },
+    background: {
+      control: 'radio',
+      options: ['reddish-gradient', 'bluish-gradient'],
+    },
   },
 };
 
@@ -23,5 +27,17 @@ export const DotDefault: Story = {};
 export const DotAbsolute: Story = {
   args: {
     isAbsolute: true,
+  },
+};
+
+export const DotBluishBackground: Story = {
+  args: {
+    background: 'bluish-gradient',
+  },
+};
+
+export const DotReddishBackground: Story = {
+  args: {
+    background: 'reddish-gradient',
   },
 };

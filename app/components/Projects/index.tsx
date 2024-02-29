@@ -1,5 +1,5 @@
 import clsx from 'clsx';
-import { Box, Capsule, CapsuleProps, Dot } from '..';
+import { Box, Capsule, CapsuleProps, Dot, Header } from '..';
 
 interface Project {
   name: string;
@@ -15,7 +15,7 @@ interface ProjectsProps {
 }
 
 export const Projects: React.FC<ProjectsProps> = ({ projects }) => (
-  <Box header="Doświadczenie">
+  <Box header="Projekty">
     {projects.map(({ name, url, techs }, index) => (
       <div
         className={clsx({
@@ -24,11 +24,7 @@ export const Projects: React.FC<ProjectsProps> = ({ projects }) => (
       >
         <div className="flex justify-between items-center relative">
           <Dot isAbsolute />
-
-          {/* TODO: przeniesc jako komponent z dwiema wersjami kolorystycznymi */}
-          <h3 className="font-bold bg-gradient-to-r from-green-600 to-blue-600 dark:from-green-300 dark:to-blue-400 inline-block text-transparent bg-clip-text">
-            {name}
-          </h3>
+          <Header background="bluish-gradient" header={name} />
           <a
             className="text-blue-600 underline dark:text-blue-500 hover:no-underline"
             href={`https://${url}/`}
