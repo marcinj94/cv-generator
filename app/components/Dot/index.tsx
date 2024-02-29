@@ -4,6 +4,8 @@ interface DotProps {
   isAbsolute?: boolean;
 }
 
+// TODO: dodać odcien pomaranczowo czerwony!! np uzyc go w doswiadczeniu
+
 export const Dot: React.FC<DotProps> = ({ isAbsolute }) => (
   <div
     className={clsx(

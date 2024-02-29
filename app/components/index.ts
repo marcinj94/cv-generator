@@ -11,3 +11,4 @@ export * from './Dot';
 export * from './Technologies';
 export * from './Experience';
 export * from './Languages';
+export * from './Projects';
