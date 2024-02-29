@@ -13,6 +13,7 @@ import {
   Languages,
   Name,
   Profession,
+  Projects,
   Technologies,
 } from './components';
 import { Size } from './components/types';
@@ -40,6 +41,36 @@ const Home = () => {
         </div>
       ))}
       <div className="flex flex-col gap-3 m-4">
+        <Projects
+          projects={[
+            {
+              name: 'Google app',
+              url: 'google.pl',
+              techs: [
+                {
+                  description: 'Front-end:',
+                  skills: [
+                    {
+                      description: 'Next.JS',
+                      Icon: TbBrandNextjs,
+                    },
+                  ],
+                },
+                {
+                  description: 'Back-end:',
+                  skills: [
+                    {
+                      description: 'Express.JS',
+                    },
+                    {
+                      description: 'Typescript',
+                    },
+                  ],
+                },
+              ],
+            },
+          ]}
+        />
         <Languages
           languages={[
             {
