@@ -3,6 +3,7 @@
 import { DiSwift } from 'react-icons/di';
 import { TbBrandNextjs } from 'react-icons/tb';
 import { SiStorybook } from 'react-icons/si';
+import { GiFullMotorcycleHelmet, GiGuitarBassHead, GiHops } from 'react-icons/gi';
 import {
   Avatar,
   Box,
@@ -10,6 +11,7 @@ import {
   ContactDetails,
   Education,
   Experience,
+  Hobby,
   Languages,
   Name,
   Profession,
@@ -41,6 +43,19 @@ const Home = () => {
         </div>
       ))}
       <div className="flex flex-col gap-3 m-4">
+        <Hobby
+          hobby={[
+            { description: 'Home brewing', Icon: GiHops },
+            {
+              description: 'Motorcycle',
+              Icon: GiFullMotorcycleHelmet,
+            },
+            {
+              description: 'Music',
+              Icon: GiGuitarBassHead,
+            },
+          ]}
+        />
         <Projects
           projects={[
             {
@@ -136,7 +151,7 @@ const Home = () => {
           ]}
         />
         <Technologies
-          elements={[
+          technologies={[
             {
               description: 'Swift',
               Icon: DiSwift,

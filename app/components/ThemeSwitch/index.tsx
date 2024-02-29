@@ -7,6 +7,9 @@ import Image from 'next/image';
 
 const ICON_SIZE = 36;
 
+// TODO: create .stories.tsx
+// TODO: add theme switcher to storybook -> https://storybook.js.org/blog/how-to-add-a-theme-switcher-to-storybook/
+
 const ThemeSwitch = () => {
   const [mounted, setMounted] = useState(false);
   const { setTheme, resolvedTheme } = useTheme();
