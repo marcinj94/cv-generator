@@ -1,5 +1,5 @@
 import clsx from 'clsx';
-import { Box, Capsule, CapsuleProps, Dot } from '..';
+import { Box, Capsule, CapsuleProps, Dot, Header } from '..';
 
 interface Job {
   jobTitle: string;
@@ -24,10 +24,8 @@ export const Experience: React.FC<ExperienceProps> = ({ jobs }) => (
         })}
       >
         <div className="flex justify-between items-center relative">
-          <Dot isAbsolute />
-          <h3 className="font-bold bg-gradient-to-r from-orange-500 to-red-500  inline-block text-transparent bg-clip-text">
-            {jobTitle} | {company}
-          </h3>
+          <Dot isAbsolute background="bluish-gradient" />
+          <Header header={`${jobTitle} | ${company}`} background="reddish-gradient" />
           <Capsule description={timeline} />
         </div>
         {techs?.map(({ description, skills }, techIndex) => (

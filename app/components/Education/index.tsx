@@ -1,5 +1,5 @@
 import clsx from 'clsx';
-import { Box, Capsule, Dot } from '..';
+import { Box, Capsule, Dot, Header } from '..';
 
 export interface UniversityProps {
   school: string;
@@ -21,7 +21,7 @@ export const Education: React.FC<EducationProps> = ({ educations }) => (
       >
         <div className="flex justify-between items-center relative">
           <Dot isAbsolute />
-          <h3 className="font-bold">{school}</h3>
+          <Header header={school} />
           <Capsule description={years} boldText />
         </div>
         <p className="italic">{level}</p>
