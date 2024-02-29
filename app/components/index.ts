@@ -10,3 +10,4 @@ export * from './Capsule';
 export * from './Dot';
 export * from './Technologies';
 export * from './Experience';
+export * from './Languages';

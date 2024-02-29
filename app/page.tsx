@@ -10,6 +10,7 @@ import {
   ContactDetails,
   Education,
   Experience,
+  Languages,
   Name,
   Profession,
   Technologies,
@@ -39,6 +40,18 @@ const Home = () => {
         </div>
       ))}
       <div className="flex flex-col gap-3 m-4">
+        <Languages
+          languages={[
+            {
+              name: 'Polski',
+              level: 'natywny',
+            },
+            {
+              name: 'Angielski',
+              level: 'B2',
+            },
+          ]}
+        />
         <Experience
           jobs={[
             {
