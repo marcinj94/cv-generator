@@ -13,3 +13,4 @@ export * from './Experience';
 export * from './Languages';
 export * from './Projects';
 export * from './Header';
+export * from './Hobby';

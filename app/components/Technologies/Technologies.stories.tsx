@@ -10,7 +10,7 @@ const meta: Meta<typeof Technologies> = {
   // 👇 Enables auto-generated documentation for the component story
   tags: ['autodocs'],
   argTypes: {
-    elements: {
+    technologies: {
       defaultValue: [],
     },
   },
@@ -21,7 +21,7 @@ type Story = StoryObj<typeof Technologies>;
 
 export const ListOfTechnologies: Story = {
   args: {
-    elements: [
+    technologies: [
       {
         description: 'Swift',
         Icon: DiSwift,
