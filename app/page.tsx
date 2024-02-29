@@ -1,96 +1,223 @@
-import Image from 'next/image';
-import styles from './page.module.css';
+/* eslint-disable object-curly-newline */
+// import Image from 'next/image';
+import { DiSwift } from 'react-icons/di';
+import { TbBrandNextjs } from 'react-icons/tb';
+import { SiStorybook } from 'react-icons/si';
+import { GiFullMotorcycleHelmet, GiGuitarBassHead, GiHops } from 'react-icons/gi';
+import {
+  Avatar,
+  Box,
+  Capsule,
+  ContactDetails,
+  Education,
+  Experience,
+  Hobby,
+  Languages,
+  Name,
+  Profession,
+  Projects,
+  Technologies,
+} from './components';
+import { Size } from './components/types';
 
-export default function Home() {
-  const test = 2;
-  const test2 = 123;
+const Home = () => {
+  const arr: Size[] = ['sm', 'md', 'lg'];
 
   return (
-    <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get {test} {test2} started by editing&nbsp;
-          <code className={styles.code}>app/page.tsx</code>
-        </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+    <div>
+      {arr.map((size: Size) => (
+        <div
+          className="text"
+          style={{
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+            gap: 20,
+          }}
+        >
+          <Avatar initials="MJ" size={size} />
+          <div className="div">
+            <Name name="Marcin" surname="Jusiak" size={size} />
+            <Profession title="Front-end developer" size={size} />
+          </div>
         </div>
-      </div>
-
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
+      ))}
+      <div className="flex flex-col gap-3 m-4">
+        <Hobby
+          hobby={[
+            { description: 'Home brewing', Icon: GiHops },
+            {
+              description: 'Motorcycle',
+              Icon: GiFullMotorcycleHelmet,
+            },
+            {
+              description: 'Music',
+              Icon: GiGuitarBassHead,
+            },
+          ]}
         />
+        <Projects
+          projects={[
+            {
+              name: 'Google app',
+              url: 'google.pl',
+              techs: [
+                {
+                  description: 'Front-end:',
+                  skills: [
+                    {
+                      description: 'Next.JS',
+                      Icon: TbBrandNextjs,
+                    },
+                  ],
+                },
+                {
+                  description: 'Back-end:',
+                  skills: [
+                    {
+                      description: 'Express.JS',
+                    },
+                    {
+                      description: 'Typescript',
+                    },
+                  ],
+                },
+              ],
+            },
+          ]}
+        />
+        <Languages
+          languages={[
+            {
+              name: 'Polski',
+              level: 'natywny',
+            },
+            {
+              name: 'Angielski',
+              level: 'B2',
+            },
+          ]}
+        />
+        <Experience
+          jobs={[
+            {
+              jobTitle: 'Front-end developer',
+              company: 'Amazon',
+              timeline: '2010 - 2015',
+              techs: [
+                {
+                  description: 'development new front end applications',
+                  skills: [
+                    {
+                      description: 'HTML',
+                    },
+                    {
+                      description: 'CSS',
+                    },
+                    {
+                      description: 'JavaScript',
+                    },
+                  ],
+                },
+                {
+                  description: 'development new backend application',
+                  skills: [
+                    {
+                      description: 'Node.JS',
+                    },
+                    {
+                      description: 'ExpressJS',
+                    },
+                    {
+                      description: 'MongoDB',
+                    },
+                    {
+                      description: 'Gitlab CI/CD',
+                    },
+                  ],
+                },
+              ],
+            },
+            {
+              jobTitle: 'Back-end developer',
+              company: 'Google',
+              timeline: '04.2015 - 12.2022',
+              techs: [
+                {
+                  description: 'create new applications',
+                },
+              ],
+            },
+          ]}
+        />
+        <Technologies
+          technologies={[
+            {
+              description: 'Swift',
+              Icon: DiSwift,
+            },
+            {
+              description: 'Next.JS',
+              Icon: TbBrandNextjs,
+            },
+            {
+              description: 'Storybook',
+              Icon: SiStorybook,
+            },
+            {
+              description: 'Struktura MVVM',
+            },
+            {
+              description: 'CocoaPods',
+            },
+            {
+              description: 'Core Data',
+            },
+            {
+              description: 'JSON',
+            },
+            {
+              description: 'Firestore',
+            },
+          ]}
+        />
+        <Education
+          educations={[
+            {
+              school: 'Josip Juraj Strossmayer University of Osijek',
+              years: '10/2017 - 02/2018',
+              level: 'Master of Engineering | Erasmus+',
+            },
+            {
+              school: 'Lublin University of Technologi',
+              years: '2017 - 2018',
+              level: 'Master of Engineering in Computer Science | spec. Internet Application',
+            },
+            {
+              school: 'Suleyman Demirel University',
+              years: '02/2016 - 06/2016',
+              level: 'Bachelor of Engineering | Erasmus+',
+            },
+            {
+              school: 'Lublin University of Technologi',
+              years: '2013 - 2017',
+              level: 'Bachelor of Engineering in Computer Science',
+            },
+          ]}
+        />
+        <Capsule description="2017 - 2022" boldText />
+        <Capsule description="2017 - 2022" boldText background="bluish-gradient" />
+        <Capsule description="2017 - 2022" background="reddish-gradient" />
+        <ContactDetails
+          mail="john.doe@gmail.com"
+          linkedin="Marcin Jusiak"
+          github="marcinj94"
+          phone="+48 123 123 123"
+        />
+        <Box header="Education">test</Box>
       </div>
-
-      <div className={styles.grid}>
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p>Find in-depth information about Next.js features and API.</p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Learn <span>-&gt;</span>
-          </h2>
-          <p>Learn about Next.js in an interactive course with&nbsp;quizzes!</p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p>Explore starter templates for Next.js.</p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p>Instantly deploy your Next.js site to a shareable URL with Vercel.</p>
-        </a>
-      </div>
-    </main>
+    </div>
   );
-}
+};
+
+export default Home;
