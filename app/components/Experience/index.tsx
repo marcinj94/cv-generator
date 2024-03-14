@@ -1,7 +1,7 @@
 import clsx from 'clsx';
 import { Box, Capsule, CapsuleProps, Dot, Header } from '..';
 
-interface Job {
+export interface Job {
   jobTitle: string;
   company: string;
   timeline: string;
@@ -19,6 +19,7 @@ export const Experience: React.FC<ExperienceProps> = ({ jobs }) => (
   <Box header="Doświadczenie">
     {jobs.map(({ jobTitle, company, techs, timeline }, index) => (
       <div
+        key={`${jobTitle}_${company}_${timeline}`}
         className={clsx({
           'pt-2': index !== 0,
         })}
@@ -29,7 +30,7 @@ export const Experience: React.FC<ExperienceProps> = ({ jobs }) => (
           <Capsule description={timeline} />
         </div>
         {techs?.map(({ description, skills }, techIndex) => (
-          <div>
+          <div key={description}>
             <p
               className={clsx('italic pb-2', {
                 'pt-2': techIndex !== 0,
@@ -44,6 +45,7 @@ export const Experience: React.FC<ExperienceProps> = ({ jobs }) => (
             >
               {skills?.map((skill) => (
                 <Capsule
+                  key={skill.description}
                   description={skill.description}
                   Icon={skill.Icon}
                   boldText={skill.boldText}

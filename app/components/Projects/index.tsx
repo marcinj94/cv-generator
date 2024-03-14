@@ -1,7 +1,7 @@
 import clsx from 'clsx';
 import { Box, Capsule, CapsuleProps, Dot, Header } from '..';
 
-interface Project {
+export interface Project {
   name: string;
   url: string;
   techs: {
@@ -18,6 +18,7 @@ export const Projects: React.FC<ProjectsProps> = ({ projects }) => (
   <Box header="Projekty">
     {projects.map(({ name, url, techs }, index) => (
       <div
+        key={`${name}_${url}`}
         className={clsx({
           'pt-2': index !== 0,
         })}
@@ -35,7 +36,7 @@ export const Projects: React.FC<ProjectsProps> = ({ projects }) => (
           </a>
         </div>
         {techs?.map(({ description, skills }, techIndex) => (
-          <div>
+          <div key={description}>
             <p
               className={clsx('italic pb-2', {
                 'pt-2': techIndex !== 0,
@@ -50,6 +51,7 @@ export const Projects: React.FC<ProjectsProps> = ({ projects }) => (
             >
               {skills?.map((skill) => (
                 <Capsule
+                  key={skill.description}
                   description={skill.description}
                   Icon={skill.Icon}
                   boldText={skill.boldText}

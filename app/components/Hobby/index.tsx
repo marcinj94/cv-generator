@@ -9,6 +9,7 @@ export const Hobby: React.FC<HobbyProps> = ({ hobby }) => (
     <div className="flex gap-2 flex-wrap">
       {hobby.map(({ description, Icon, boldText }) => (
         <Capsule
+          key={description}
           description={description}
           Icon={Icon}
           boldText={boldText}
