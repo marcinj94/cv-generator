@@ -1,6 +1,7 @@
 /* eslint-disable object-curly-newline */
 import {
   Avatar,
+  Clause,
   ContactDetails,
   Education,
   Experience,
@@ -22,7 +23,7 @@ const Cv = () => {
   return (
     <section
       style={{
-        maxWidth: 1024, // 1366 np
+        maxWidth: 1366, // 1366 np
         margin: '0 auto',
         backgroundColor: '#00bfff30',
       }}
@@ -62,6 +63,7 @@ const Cv = () => {
           <Hobby hobby={hobbys} />
         </div>
       </div>
+      <Clause description="„Wyrażam zgodę na przetwarzanie moich danych osobowych dla potrzeb rekrutacji (zgodnie z art. 6 ust. 1 lit. a Rozporządzenia Parlamentu Europejskiego i Rady (UE) 2016/679 z dnia 27 kwietnia 2016 r. w sprawie ochrony osób fizycznych w związku z przetwarzaniem danych osobowych i w sprawie swobodnego przepływu takich danych oraz uchylenia dyrektywy 95/46/WE (ogólne rozporządzenie o ochronie danych).”" />
     </section>
   );
 };
