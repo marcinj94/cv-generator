@@ -1,5 +1,5 @@
 import { AiFillGithub, AiFillLinkedin } from 'react-icons/ai';
-import { FaSquarePhone } from 'react-icons/fa6';
+import { FaDesktop, FaSquarePhone } from 'react-icons/fa6';
 import { FiMail } from 'react-icons/fi';
 import { Box } from '..';
 
@@ -8,6 +8,7 @@ interface ContactDetailsProps {
   linkedin?: string;
   github?: string;
   phone?: string;
+  webSite?: string;
 }
 
 export const ContactDetails: React.FC<ContactDetailsProps> = ({
@@ -15,6 +16,7 @@ export const ContactDetails: React.FC<ContactDetailsProps> = ({
   linkedin,
   github,
   phone,
+  webSite,
 }) => (
   <Box>
     <ul className="flex flex-col gap-3">
@@ -55,6 +57,14 @@ export const ContactDetails: React.FC<ContactDetailsProps> = ({
           <a className="flex items-center gap-3" href={`tel:${phone.replaceAll(' ', '')}`}>
             <FaSquarePhone size={24} />
             {phone}
+          </a>
+        </li>
+      )}
+      {webSite && (
+        <li className="flex items-center gap-3">
+          <a className="flex items-center gap-3" href={webSite} target="_blank" rel="noreferrer">
+            <FaDesktop size={24} />
+            <span className="underline">{webSite}</span>
           </a>
         </li>
       )}

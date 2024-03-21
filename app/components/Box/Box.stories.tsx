@@ -10,6 +10,10 @@ const meta: Meta<typeof Box> = {
     header: {
       control: 'text',
     },
+    minHeight: {
+      control: 'radio',
+      options: ['min-h-full', 'min-h-[95%]'],
+    },
     children: {
       description: 'JSX prop called children',
     },

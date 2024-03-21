@@ -14,7 +14,7 @@ interface LanguagesProps {
 }
 
 export const Languages: React.FC<LanguagesProps> = ({ languages }) => (
-  <Box header="Języki">
+  <Box header="Języki" minHeight="min-h-full">
     <ul className="flex flex-col gap-2 flex-wrap">
       {languages.map((lang) => {
         let Icon: IconType | null = null;

@@ -5,7 +5,7 @@ interface HobbyProps {
 }
 
 export const Hobby: React.FC<HobbyProps> = ({ hobby }) => (
-  <Box header="Hobby">
+  <Box header="Hobby" minHeight="min-h-full">
     <div className="flex gap-2 flex-wrap">
       {hobby.map(({ description, Icon, boldText }) => (
         <Capsule
