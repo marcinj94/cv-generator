@@ -4,7 +4,7 @@ import { Box } from '..';
 
 // TODO: dodanie większej ilosci ikon i lepsze nimi zarzadzanie
 
-interface Language {
+export interface Language {
   name: 'Angielski' | 'Polski' | string;
   level: string;
 }
@@ -14,7 +14,7 @@ interface LanguagesProps {
 }
 
 export const Languages: React.FC<LanguagesProps> = ({ languages }) => (
-  <Box header="Języki">
+  <Box header="Języki" minHeight="min-h-full">
     <ul className="flex flex-col gap-2 flex-wrap">
       {languages.map((lang) => {
         let Icon: IconType | null = null;
@@ -25,7 +25,7 @@ export const Languages: React.FC<LanguagesProps> = ({ languages }) => (
         }
 
         return (
-          <li className="flex justify-start items-center  gap-2">
+          <li key={lang.name} className="flex justify-start items-center  gap-2">
             {Icon && <Icon size={24} />}
             {lang.name} |{' '}
             <span className="bg-gradient-to-r from-orange-500 to-red-500  inline-block text-transparent bg-clip-text font-bold italic">

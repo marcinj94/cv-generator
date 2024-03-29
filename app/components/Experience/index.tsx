@@ -1,7 +1,7 @@
 import clsx from 'clsx';
 import { Box, Capsule, CapsuleProps, Dot, Header } from '..';
 
-interface Job {
+export interface Job {
   jobTitle: string;
   company: string;
   timeline: string;
@@ -16,20 +16,24 @@ interface ExperienceProps {
 }
 
 export const Experience: React.FC<ExperienceProps> = ({ jobs }) => (
-  <Box header="Doświadczenie">
+  <Box header="Doświadczenie" minHeight="min-h-[95%]">
     {jobs.map(({ jobTitle, company, techs, timeline }, index) => (
       <div
+        key={`${jobTitle}_${company}_${timeline}`}
         className={clsx({
           'pt-2': index !== 0,
         })}
       >
         <div className="flex justify-between items-center relative">
-          <Dot isAbsolute background="bluish-gradient" />
-          <Header header={`${jobTitle} | ${company}`} background="reddish-gradient" />
+          <Dot isAbsolute background="reddish-gradient" />
+          <Header
+            header={`${jobTitle} | ${company}`}
+            background={index % 2 === 0 ? 'bluish-gradient' : 'reddish-gradient'}
+          />
           <Capsule description={timeline} />
         </div>
         {techs?.map(({ description, skills }, techIndex) => (
-          <div>
+          <div key={description}>
             <p
               className={clsx('italic pb-2', {
                 'pt-2': techIndex !== 0,
@@ -44,6 +48,7 @@ export const Experience: React.FC<ExperienceProps> = ({ jobs }) => (
             >
               {skills?.map((skill) => (
                 <Capsule
+                  key={skill.description}
                   description={skill.description}
                   Icon={skill.Icon}
                   boldText={skill.boldText}

@@ -15,6 +15,7 @@ export const Education: React.FC<EducationProps> = ({ educations }) => (
   <Box header="Education">
     {educations.map(({ school, years, level }, index) => (
       <div
+        key={school}
         className={clsx({
           'mb-2': index !== educations.length - 1,
         })}

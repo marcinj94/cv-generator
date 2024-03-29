@@ -27,6 +27,7 @@ const Home = () => {
     <div>
       {arr.map((size: Size) => (
         <div
+          key={size}
           className="text"
           style={{
             display: 'flex',
