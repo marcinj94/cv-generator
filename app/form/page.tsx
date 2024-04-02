@@ -1,6 +1,6 @@
 'use client';
 
-import { Button, FormHeader } from '../components';
+import { Button, FormHeader, Input } from '../components';
 
 const Form = () => {
   const tst = 1;
@@ -27,6 +27,9 @@ const Form = () => {
       <br />
       <br />
       <Button disabled label="Download" onClick={handleOnClick} />
+      <br />
+      <br />
+      <Input label="Text value" id="test" />
     </div>
   );
 };

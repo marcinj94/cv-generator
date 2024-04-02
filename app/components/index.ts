@@ -17,3 +17,4 @@ export * from './Hobby';
 export * from './Clause';
 export * from './FormHeader';
 export * from './Button';
+export * from './Input';
