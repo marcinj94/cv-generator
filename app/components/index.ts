@@ -15,3 +15,6 @@ export * from './Projects';
 export * from './Header';
 export * from './Hobby';
 export * from './Clause';
+export * from './FormHeader';
+export * from './Button';
+export * from './Input';

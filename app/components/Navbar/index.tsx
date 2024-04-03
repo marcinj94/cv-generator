@@ -8,6 +8,7 @@ export const Navbar = () => (
     <div className="flex flex-col">
       <Link href="/">Home</Link>
       <Link href="/cv">CV page</Link>
+      <Link href="/form">Form</Link>
     </div>
     <DarkLightButton />
   </nav>

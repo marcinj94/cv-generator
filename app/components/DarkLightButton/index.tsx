@@ -7,6 +7,9 @@ import Image from 'next/image';
 
 const ICON_SIZE = 36;
 
+// TODO: create animated button
+// https://www.youtube.com/watch?v=l8aC7BsKhTI&ab_channel=Codehal
+
 const DarkLightButton = () => {
   const [mounted, setMounted] = useState(false);
   const { setTheme, resolvedTheme } = useTheme();
